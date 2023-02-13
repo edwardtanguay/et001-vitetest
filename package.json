@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "vite serve --host --port 4011",
+    "setup": "npm i && pm2 start --name et001-vitetest npm -- start --update-env --time && pm2 save",
+		"deploy": "git pull --no-rebase && pm2 et001-vitetest --update-env --time && pm2 save"
   },
   "dependencies": {
     "react": "^18.2.0",
